@@ -1,4 +1,4 @@
-# 🎬 CineMatch — Hybrid ML Movie Recommender
+# CineMatch — Hybrid ML Movie Recommender
 
 A production-grade movie recommendation system combining **content-based filtering** (TF-IDF) and **collaborative filtering** (Matrix Factorization via SVD) in a hybrid engine, served via a cinematic Streamlit UI.
 
@@ -6,25 +6,8 @@ A production-grade movie recommendation system combining **content-based filteri
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────┐
-│               HYBRID RECOMMENDER                │
-│  score = α·content + (1−α)·CF + 0.1·popularity │
-│  + MMR diversity re-ranking                     │
-└──────────┬──────────────────────┬───────────────┘
-           │                      │
-  ┌────────▼────────┐    ┌────────▼────────┐
-  │  Content-Based  │    │  Collaborative  │
-  │                 │    │                 │
-  │  TF-IDF on:     │    │  Truncated SVD  │
-  │  - Description  │    │  User-Item      │
-  │  - Genres ×3    │    │  Matrix (500×50)│
-  │  - Director ×2  │    │  30 latent dims │
-  │  - Cast ×2      │    │  Cosine sim in  │
-  │  5k vocab       │    │  latent space   │
-  │  Cosine sim     │    │                 │
-  └─────────────────┘    └─────────────────┘
-```
+<img width="1194" height="785" alt="Screenshot 2026-05-01 at 11 54 20" src="https://github.com/user-attachments/assets/969a04ff-1279-45f9-9e3e-4c7989e28510" />
+
 
 ## Features
 
